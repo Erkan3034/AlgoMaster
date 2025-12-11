@@ -47,8 +47,8 @@ const translations: Record<Language, Record<string, string>> = {
       "Learn DSA interactively with visualizations, step-by-step explanations, and hands-on code examples. From arrays to graphs, from bubble sort to DFS.",
     "home.startLearning": "Start Learning",
     "home.tryVisualizer": "Try Visualizer",
-    "home.dataStructuresCount": "9 Data Structures",
-    "home.algorithmsCount": "8 Algorithms",
+    "home.dataStructuresCount": "14 Data Structures",
+    "home.algorithmsCount": "13 Algorithms",
     "home.interactiveVisualizers": "Interactive Visualizers",
 
     "home.features.title": "Everything You Need to Master DSA",
@@ -137,7 +137,7 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.documentation": "Documentation",
     "footer.tutorials": "Tutorials",
     "footer.examples": "Examples",
-    "footer.copyright": "DSA Master. Built for learning.",
+    "footer.copyright": "Algo Master. Built for learning.",
 
     "notFound.title": "404",
     "notFound.message": "Page not found",
@@ -193,7 +193,7 @@ const translations: Record<Language, Record<string, string>> = {
     "lang.turkish": "Türkçe",
 
     "home.badge": "Etkileşimli Öğrenme Platformu",
-    "home.title": "Ustalaşın:", // İngilizce yapıda başa geldiği için : ile ayırdık
+    "home.title": "Ustalaşma Zamanı:", // İngilizce yapıda başa geldiği için : ile ayırdık
     "home.titleHighlight1": "Veri Yapıları",
     "home.titleAnd": "&",
     "home.titleHighlight2": "Algoritmalar",
@@ -201,8 +201,8 @@ const translations: Record<Language, Record<string, string>> = {
       "Görselleştirmeler, adım adım açıklamalar ve uygulamalı kod örnekleriyle DSA'yı etkileşimli olarak öğrenin. Dizilerden graflara, Bubble Sort'tan DFS'ye kadar.",
     "home.startLearning": "Öğrenmeye Başla",
     "home.tryVisualizer": "Görselleştiriciyi Dene",
-    "home.dataStructuresCount": "9 Veri Yapısı",
-    "home.algorithmsCount": "8 Algoritma",
+    "home.dataStructuresCount": "14 Veri Yapısı",
+    "home.algorithmsCount": "13 Algoritma",
     "home.interactiveVisualizers": "Etkileşimli Görselleştirmeler",
 
     "home.features.title": "DSA'da Ustalaşmak İçin İhtiyacınız Olan Her Şey",
@@ -292,7 +292,7 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.documentation": "Dokümantasyon",
     "footer.tutorials": "Eğitimler",
     "footer.examples": "Örnekler",
-    "footer.copyright": "DSA Master. Öğrenmek için tasarlandı.",
+    "footer.copyright": "Algo Master. Öğrenmek için tasarlandı.",
 
     "notFound.title": "404",
     "notFound.message": "Sayfa bulunamadı",

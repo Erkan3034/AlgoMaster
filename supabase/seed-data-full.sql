@@ -2,7 +2,6 @@
 -- ALGO MASTER - FULL SEED DATA
 -- =============================================
 -- This file contains ALL data from schema.ts
--- Run this in Supabase SQL Editor after schema.sql
 
 -- =============================================
 -- DATA STRUCTURES (14 items)
