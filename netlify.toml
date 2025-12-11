@@ -11,6 +11,8 @@
 [build.environment]
   NODE_VERSION = "20"
   NPM_VERSION = "10"
+  # Supabase anon key is designed to be public (security is via RLS, not key secrecy)
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SUPABASE_ANON_KEY,VITE_SUPABASE_URL"
 
 # SPA Routing - redirect all routes to index.html
 [[redirects]]
