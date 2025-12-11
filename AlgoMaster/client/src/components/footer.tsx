@@ -11,10 +11,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary text-primary-foreground font-bold text-lg">
-                DS
-              </div>
-              <span className="font-semibold text-lg">DSA Master</span>
+              <img 
+                src="/logo-algo.png" 
+                alt="Algo Master Logo" 
+                className="w-9 h-9 rounded-lg object-contain"
+              />
+              <span className="font-semibold text-lg">Algo Master</span>
             </div>
             <p className="text-muted-foreground max-w-sm">
               {t("footer.description")}

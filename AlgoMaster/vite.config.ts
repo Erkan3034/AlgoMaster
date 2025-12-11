@@ -11,6 +11,8 @@ export default defineConfig({
     },
   },
   root: path.resolve(__dirname, "client"),
+  // .env dosyası ana dizinde, Vite'a orayı göster
+  envDir: path.resolve(__dirname),
   build: {
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,

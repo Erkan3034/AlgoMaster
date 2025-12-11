@@ -58,10 +58,12 @@ export function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-2" data-testid="link-home">
-            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary text-primary-foreground font-bold text-lg">
-              DS
-            </div>
-            <span className="font-semibold text-lg hidden sm:block">DSA Master</span>
+            <img 
+              src="/logo-algo.png" 
+              alt="Algo Master Logo" 
+              className="w-9 h-9 rounded-lg object-contain"
+            />
+            <span className="font-semibold text-lg hidden sm:block">Algo Master</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-1">

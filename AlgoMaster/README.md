@@ -1,33 +1,50 @@
-# Algo Master - Data Structures & Algorithms Learning Platform
+# 🧠 Algo Master
 
-🎯 Algo Master is an interactive educational web application designed to teach Data Structures and Algorithms to beginners and developers. The platform provides hands-on learning through visual animations, code examples, interactive playgrounds, and comprehensive explanations.
+**Interactive Data Structures & Algorithms Learning Platform**
 
-![Algo Master](https://img.shields.io/badge/React-18-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue) ![Firebase](https://img.shields.io/badge/Firebase-10-orange) ![Tailwind](https://img.shields.io/badge/Tailwind-3.4-blue)
+Modern, interactive web application for learning data structures and algorithms with visual explanations, code examples, and hands-on experiments.
+
+![Algo Master](https://img.shields.io/badge/React-18.3.1-blue?logo=react)
+![Supabase](https://img.shields.io/badge/Supabase-Backend-green?logo=supabase)
+![Netlify](https://img.shields.io/badge/Netlify-Deployed-00C7B7?logo=netlify)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue?logo=typescript)
+
+---
 
 ## ✨ Features
 
-- 📚 **14+ Data Structures** - Arrays, Linked Lists, Trees, Graphs, and more
-- 🔄 **12+ Algorithms** - Sorting, Searching, Graph algorithms
-- 🎬 **Interactive Visualizer** - Watch algorithms in action step-by-step
-- 💻 **Code Playground** - Write and run code in real-time
-- 🔐 **Admin Panel** - Manage content (Firebase Authentication)
-- 🌍 **Multi-language** - English and Turkish support
-- 🌙 **Dark/Light Mode** - System preference detection
+### 📚 Educational Content
+- **Data Structures**: Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables
+- **Algorithms**: Sorting, Searching, Graph algorithms with step-by-step explanations
+- **Complexity Analysis**: Big O notation with visual comparisons
+- **Code Examples**: JavaScript implementations with detailed comments
+
+### 🎨 User Experience
+- 🌓 Light/Dark theme support
+- 🌍 English & Turkish language support
+- 📱 Fully responsive design
+- ⚡ Fast, optimized performance
+- 🔍 Global search functionality
+
+### 🔐 Admin Panel (with Supabase)
+- Secure authentication
+- Content management (CRUD)
+- Real-time updates
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+
-- Firebase account (free)
+- Node.js 20+
+- npm 10+
 
-### Installation
+### Local Development
 
 ```bash
 # Clone the repository
-git clone https://github.com/Erkan3034/AlgoMaster.git
-cd AlgoMaster
+git clone https://github.com/Erkan3034/algo-master.git
+cd algo-master
 
 # Install dependencies
 npm install
@@ -36,147 +53,109 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 🔥 Firebase Setup
+> 📝 **Note**: Without Supabase configuration, the app runs with static data. 
+---
 
-### Step 1: Create Firebase Project
+## 🗄️ Database Setup (Supabase)
 
-1. Go to [Firebase Console](https://console.firebase.google.com)
-2. Click "Add project" → Enter project name → Create
-3. Wait for project creation
+### 1. Create Supabase Project
+1. Go to [supabase.com](https://supabase.com)
+2. Create a new project
+3. Copy your **URL** and **anon key**
 
-### Step 2: Enable Authentication
+### 2. Create Tables
+Run the SQL script in Supabase SQL Editor:
 
-1. In Firebase Console → Build → Authentication
-2. Click "Get started"
-3. Sign-in method → Email/Password → Enable → Save
-
-### Step 3: Create Admin User
-
-1. Authentication → Users tab
-2. Click "Add user"
-3. Enter your admin email and password
-4. Click "Add user"
-
-### Step 4: Get Firebase Config
-
-1. Project Settings (gear icon) → General
-2. Scroll to "Your apps" → Click Web icon (</>) 
-3. Register app name → Register
-4. Copy the firebaseConfig values
-
-### Step 5: Configure Environment
-
-Create `.env` file in project root:
-
-```env
-VITE_FIREBASE_API_KEY=your_api_key_here
-VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
+```sql
+-- Located at: supabase/schema.sql
 ```
+
+### 3. Create Admin User
+1. Go to **Authentication** → **Users**
+2. Click **Add User**
+3. Enter admin email and password
 
 ---
 
-## 🌐 Deploy to Firebase Hosting
+## 🌐 Deployment (Netlify)
 
-### Step 1: Install Firebase CLI
+### One-Click Deploy
 
-```bash
-npm install -g firebase-tools
-```
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
 
-### Step 2: Login & Init
+### Manual Deployment
 
-```bash
-# Login to Firebase
-firebase login
+1. **Connect to GitHub**
+   - Go to Netlify Dashboard
+   - Click "New site from Git"
+   - Select your repository
 
-# Initialize (select Hosting, use existing project)
-firebase init hosting
-```
+2. **Configure Build Settings**
+   - Build command: `npm run build`
+   - Publish directory: `dist`
 
-When asked:
-- Public directory: `dist`
-- Single-page app: `Yes`
-- Overwrite index.html: `No`
+3. **Add Environment Variables**
+   - Go to Site Settings → Environment Variables
+   - Add `VITE_SUPABASE_URL`
+   - Add `VITE_SUPABASE_ANON_KEY`
 
-### Step 3: Build & Deploy
-
-```bash
-# Build for production
-npm run build
-
-# Deploy to Firebase
-firebase deploy
-```
-
-🎉 Your app is now live at: `https://your-project-id.web.app`
+4. **Deploy!**
 
 ---
 
 ## 📁 Project Structure
 
 ```
-├── client/                 # Frontend React app
+algo-master/
+├── client/                # React frontend
 │   ├── src/
-│   │   ├── components/    # UI components (shadcn/ui)
+│   │   ├── components/    # UI components
 │   │   ├── pages/         # Page components
-│   │   ├── hooks/         # Custom React hooks
-│   │   └── lib/           # Firebase config & utilities
+│   │   ├── hooks/         # Custom hooks
+│   │   ├── lib/           # Utilities & configs
+│   │   └── types/         # TypeScript types
 │   └── public/            # Static assets
-├── shared/                # Data (algorithms, data structures)
-├── firebase.json          # Firebase Hosting config
-└── vite.config.ts        # Vite build config
+├── shared/                # Shared types & static data
+├── supabase/              # Database schema
+├── netlify.toml           # Netlify configuration
+└── package.json           # Dependencies
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Framework:** React 18 + TypeScript
-- **Build Tool:** Vite 5
-- **Styling:** Tailwind CSS + shadcn/ui
-- **Auth:** Firebase Authentication
-- **Hosting:** Firebase Hosting
-- **Animations:** Framer Motion
+| Category | Technology |
+|----------|------------|
+| **Frontend** | React 18, TypeScript, Vite |
+| **Styling** | Tailwind CSS, Radix UI |
+| **State** | TanStack Query |
+| **Backend** | Supabase (PostgreSQL, Auth) |
+| **Hosting** | Netlify |
 
 ---
 
-## 📝 Content
+## 📜 Scripts
 
-### Data Structures
-- Array, Linked List, Stack, Queue
-- Hash Table, Tree, Binary Search Tree
-- Heap, Graph, Trie, AVL Tree
-- Priority Queue, Deque, Set & Map
-
-### Algorithms
-- **Sorting:** Bubble, Selection, Insertion, Merge, Quick, Heap Sort
-- **Searching:** Linear, Binary, Jump Search
-- **Graph:** BFS, DFS, Dijkstra's Algorithm
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run check    # Type-check without emitting
+```
 
 ---
 
-## 🌍 Internationalization
+## 🙏 Acknowledgments
 
-The platform supports:
-- 🇬🇧 English
-- 🇹🇷 Turkish (Türkçe)
-
-Language is auto-detected from browser settings and persisted in localStorage.
+Built with ❤️ for developers learning DSA.
 
 ---
 
 ## 📄 License
 
-MIT License - feel free to use for learning and educational purposes!
-
----
-
-Made with ❤️ for learners everywhere
+MIT License - Feel free to use for personal and commercial projects.
