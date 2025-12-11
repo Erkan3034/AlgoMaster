@@ -61,7 +61,7 @@ export function Navigation() {
             <img 
               src="/logo-algo.png" 
               alt="Algo Master Logo" 
-              className="w-9 h-9 rounded-lg object-contain"
+              className="w-14 h-14 rounded-lg object-contain"
             />
             <span className="font-semibold text-lg hidden sm:block">Algo Master</span>
           </Link>
