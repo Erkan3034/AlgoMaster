@@ -130,7 +130,7 @@ export default function AdminDashboard() {
   // Redirect if not authenticated
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
-      setLocation("/admin/login");
+      setLocation("/reber/login");
     }
   }, [isLoading, isAuthenticated, setLocation]);
 
@@ -411,12 +411,12 @@ export default function AdminDashboard() {
 
   const handleLogout = async () => {
     await logout();
-    setLocation("/admin/login");
+    setLocation("/reber/login");
   };
 
   const stats = [
     { 
-      label: t("admin.dashboard.dataStructures"), 
+      label: t("reber.dashboard.dataStructures"), 
       value: dataStructures.length, 
       icon: Database, 
       color: "text-blue-500",
@@ -424,7 +424,7 @@ export default function AdminDashboard() {
       loading: isLoadingDS
     },
     { 
-      label: t("admin.dashboard.algorithms"), 
+      label: t("reber.dashboard.algorithms"), 
       value: algorithms.length, 
       icon: Code, 
       color: "text-green-500",
@@ -432,7 +432,7 @@ export default function AdminDashboard() {
       loading: isLoadingAlg
     },
     { 
-      label: t("admin.dashboard.glossaryTerms"), 
+      label: t("reber.dashboard.glossaryTerms"), 
       value: glossaryTerms.length, 
       icon: BookOpen, 
       color: "text-purple-500",
@@ -454,25 +454,25 @@ export default function AdminDashboard() {
               <LayoutDashboard className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-xl font-bold">{t("admin.dashboard.title")}</h1>
+              <h1 className="text-xl font-bold">{t("reber.dashboard.title")}</h1>
               <p className="text-sm text-muted-foreground">
-                {t("admin.dashboard.welcome")}, {user?.email}
+                {t("reber.dashboard.welcome")}, {user?.email}
               </p>
             </div>
           </div>
           <div className="flex items-center gap-4">
             {isSupabaseConfigured ? (
               <Badge variant="default" className="bg-green-500">
-                Supabase Connected
+                {t("reber.dashboard.supabaseConnected")}
               </Badge>
             ) : (
               <Badge variant="secondary">
-                Static Mode
+                {t("reber.dashboard.staticMode")}
               </Badge>
             )}
             <Button variant="outline" size="sm" onClick={handleLogout}>
               <LogOut className="h-4 w-4 mr-2" />
-              {t("admin.dashboard.logout")}
+              {t("reber.dashboard.logout")}
             </Button>
           </div>
         </div>
@@ -483,7 +483,7 @@ export default function AdminDashboard() {
           <TabsList className="mb-8">
             <TabsTrigger value="overview" className="flex items-center gap-2">
               <TrendingUp className="h-4 w-4" />
-              {t("admin.dashboard.overview")}
+              {t("reber.dashboard.overview")}
             </TabsTrigger>
             <TabsTrigger value="data-structures" className="flex items-center gap-2">
               <Layers className="h-4 w-4" />
@@ -525,8 +525,8 @@ export default function AdminDashboard() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Quick Actions</CardTitle>
-                <CardDescription>Common administrative tasks</CardDescription>
+                <CardTitle>{t("reber.dashboard.quickActions")}</CardTitle>
+                <CardDescription>{t("reber.dashboard.commonTasks")}</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4 md:grid-cols-3">
                 <Button 
@@ -535,7 +535,7 @@ export default function AdminDashboard() {
                   onClick={() => setActiveTab("data-structures")}
                 >
                   <Database className="h-6 w-6" />
-                  Manage Data Structures
+                  {t("reber.dashboard.manageDataStructures")}
                 </Button>
                 <Button 
                   variant="outline" 
@@ -543,7 +543,7 @@ export default function AdminDashboard() {
                   onClick={() => setActiveTab("algorithms")}
                 >
                   <Code className="h-6 w-6" />
-                  Manage Algorithms
+                  {t("reber.dashboard.manageAlgorithms")}
                 </Button>
                 <Button 
                   variant="outline" 
@@ -551,7 +551,7 @@ export default function AdminDashboard() {
                   onClick={() => setActiveTab("glossary")}
                 >
                   <BookOpen className="h-6 w-6" />
-                  Manage Glossary
+                  {t("reber.dashboard.manageGlossary")}
                 </Button>
               </CardContent>
             </Card>
@@ -563,7 +563,7 @@ export default function AdminDashboard() {
               <CardHeader className="flex flex-row items-center justify-between">
                 <div>
                   <CardTitle>{t("nav.dataStructures")}</CardTitle>
-                  <CardDescription>{t("admin.dashboard.manageDataStructures")}</CardDescription>
+                  <CardDescription>{t("reber.dashboard.manageDataStructures")}</CardDescription>
                 </div>
                 {isSupabaseConfigured && (
                   <Button 
@@ -575,7 +575,7 @@ export default function AdminDashboard() {
                     }}
                   >
                     <Plus className="h-4 w-4" />
-                    Add New
+                    {t("reber.dashboard.addNew")}
                   </Button>
                 )}
               </CardHeader>
@@ -588,7 +588,7 @@ export default function AdminDashboard() {
                   <div className="text-center py-12 text-muted-foreground">
                     <Database className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No data structures yet</p>
-                    <p className="text-sm">Click "Add New" to create one</p>
+                    <p className="text-sm">{t("reber.dashboard.clickAddNew")}</p>
                   </div>
                 ) : (
                   <ScrollArea className="h-[400px]">
@@ -648,7 +648,7 @@ export default function AdminDashboard() {
               <CardHeader className="flex flex-row items-center justify-between">
                 <div>
                   <CardTitle>{t("nav.algorithms")}</CardTitle>
-                  <CardDescription>{t("admin.dashboard.manageAlgorithms")}</CardDescription>
+                  <CardDescription>{t("reber.dashboard.manageAlgorithms")}</CardDescription>
                 </div>
                 {isSupabaseConfigured && (
                   <Button 
@@ -660,7 +660,7 @@ export default function AdminDashboard() {
                     }}
                   >
                     <Plus className="h-4 w-4" />
-                    Add New
+                    {t("reber.dashboard.addNew")}
                   </Button>
                 )}
               </CardHeader>
@@ -673,7 +673,7 @@ export default function AdminDashboard() {
                   <div className="text-center py-12 text-muted-foreground">
                     <Code className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No algorithms yet</p>
-                    <p className="text-sm">Click "Add New" to create one</p>
+                    <p className="text-sm">{t("reber.dashboard.clickAddNew")}</p>
                   </div>
                 ) : (
                   <ScrollArea className="h-[400px]">
@@ -736,7 +736,7 @@ export default function AdminDashboard() {
               <CardHeader className="flex flex-row items-center justify-between">
                 <div>
                   <CardTitle>{t("nav.glossary")}</CardTitle>
-                  <CardDescription>{t("admin.dashboard.manageGlossary")}</CardDescription>
+                  <CardDescription>{t("reber.dashboard.manageGlossary")}</CardDescription>
                 </div>
                 {isSupabaseConfigured && (
                   <Button 
@@ -748,7 +748,7 @@ export default function AdminDashboard() {
                     }}
                   >
                     <Plus className="h-4 w-4" />
-                    Add New
+                    {t("reber.dashboard.addNew")}
                   </Button>
                 )}
               </CardHeader>
@@ -761,7 +761,7 @@ export default function AdminDashboard() {
                   <div className="text-center py-12 text-muted-foreground">
                     <BookOpen className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No glossary terms yet</p>
-                    <p className="text-sm">Click "Add New" to create one</p>
+                    <p className="text-sm">{t("reber.dashboard.clickAddNew")}</p>
                   </div>
                 ) : (
                   <ScrollArea className="h-[400px]">

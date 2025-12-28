@@ -13,32 +13,32 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-[🌐 Live Demo](https://algo-masterr.netlify.app/) · [🐛 Report Bug](https://github.com/Erkan3034/AlgoMaster/issues) · [✨ Request Feature](https://github.com/Erkan3034/AlgoMaster/issues)
+[🌐 Live Demo](https://algo-masterr.netlify.app/) · [ Report Bug](https://github.com/Erkan3034/AlgoMaster/issues) · [ Request Feature](https://github.com/Erkan3034/AlgoMaster/issues)
 
 </div>
 
 ---
 
-## 🎯 Project Vision
+##  Project Vision
 
 **Algo Master** was created with a simple mission: **make learning Data Structures & Algorithms accessible, visual, and enjoyable for everyone.**
 
 Many developers struggle with DSA concepts because traditional learning resources are:
-- 📖 Text-heavy and abstract
-- 🔢 Focused on memorization rather than understanding
-- 🚫 Lacking interactive elements
+-  Text-heavy and abstract
+-  Focused on memorization rather than understanding
+-  Lacking interactive elements
 
 Algo Master addresses these challenges by providing:
-- 🎨 **Visual explanations** that show how algorithms work step-by-step
-- 💻 **Code examples** in multiple languages with detailed comments
-- 🧪 **Interactive playground** to experiment with data structures
-- 📊 **Complexity analysis** with visual Big O comparisons
+- **Visual explanations** that show how algorithms work step-by-step
+-  **Code examples** in multiple languages with detailed comments
+-  **Interactive playground** to experiment with data structures
+-  **Complexity analysis** with visual Big O comparisons
 
 ---
 
-## ✨ Features
+##  Features
 
-### 📚 Comprehensive Learning Content
+###  Comprehensive Learning Content
 | Data Structures | Algorithms |
 |-----------------|------------|
 | Arrays & Dynamic Arrays | Sorting (Bubble, Quick, Merge, etc.) |
@@ -48,21 +48,21 @@ Algo Master addresses these challenges by providing:
 | Graphs | Greedy Algorithms |
 | Hash Tables | Divide & Conquer |
 
-### 🎨 User Experience
-- 🌓 **Dark/Light Theme** - Easy on the eyes
-- 🌍 **Multi-language** - English & Turkish support
-- 📱 **Responsive Design** - Works on all devices
-- ⚡ **Fast Performance** - Optimized with Vite
-- 🔍 **Search** - Find topics quickly
+###  User Experience
+-  **Dark/Light Theme** - Easy on the eyes
+-  **Multi-language** - English & Turkish support
+-  **Responsive Design** - Works on all devices
+-  **Fast Performance** - Optimized with Vite
+-  **Search** - Find topics quickly
 
-### 🔐 Admin Panel
+###  Manager Panel
 - Secure authentication via Supabase
 - Full CRUD operations for content management
 - Real-time database updates
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 | Technology | Purpose |
@@ -91,7 +91,7 @@ Algo Master addresses these challenges by providing:
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - **Node.js** 20 or higher
@@ -116,11 +116,11 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-> 💡 **Note**: The app works with static data without Supabase configuration. See [Database Setup](#database-setup) for full functionality.
+>  **Note**: The app works with static data without Supabase configuration. See [Database Setup](#database-setup) for full functionality.
 
 ---
 
-## 🗄️ Database Setup
+##  Database Setup
 
 ### 1. Create Supabase Project
 1. Visit [supabase.com](https://supabase.com) and create an account
@@ -135,6 +135,8 @@ VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_anon_key
 ```
 
+**Note:** Turkish translation is automatically handled using MyMemory Translation API (free, no API key required). Translations are cached in localStorage for performance. When Turkish language is selected, all content from the database will be automatically translated.
+
 ### 3. Initialize Database
 Run the SQL scripts in Supabase SQL Editor:
 
@@ -146,10 +148,10 @@ supabase/schema.sql
 supabase/seed-data-full.sql
 ```
 
-### 4. Create Admin User
+### 4. Create Reber User
 1. Go to **Authentication** → **Users** in Supabase Dashboard
 2. Click **Add User** → **Create New User**
-3. Enter admin email and password
+3. Enter reber email and password
 
 ---
 
@@ -185,7 +187,7 @@ AlgoMaster/
 
 ---
 
-## 📜 Available Scripts
+##  Available Scripts
 
 ```bash
 npm run dev      # Start development server with hot reload
@@ -196,17 +198,17 @@ npm run check    # Run TypeScript type checking
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions from the community! Algo Master is open source and we appreciate any help to make it better.
 
 ### Ways to Contribute
 
-- 🐛 **Report Bugs** - Found a bug? [Open an issue](https://github.com/Erkan3034/AlgoMaster/issues/new)
+-  **Report Bugs** - Found a bug? [Open an issue](https://github.com/Erkan3034/AlgoMaster/issues/new)
 - 💡 **Suggest Features** - Have an idea? [Share it with us](https://github.com/Erkan3034/AlgoMaster/issues/new)
-- 📝 **Improve Documentation** - Help others understand the project
-- 🌍 **Add Translations** - Help us reach more developers
-- 💻 **Submit Code** - Fix bugs or add new features
+-  **Improve Documentation** - Help others understand the project
+-  **Add Translations** - Help us reach more developers
+-  **Submit Code** - Fix bugs or add new features
 
 ### Contribution Guidelines
 
@@ -268,25 +270,25 @@ Then open a Pull Request on GitHub with:
 
 | Area | Description | Difficulty |
 |------|-------------|------------|
-| 🎨 New Visualizers | Add visualizations for more algorithms | Medium |
-| 🌍 Translations | Add support for new languages | Easy |
-| 📝 Content | Add explanations for new DSA topics | Easy |
-| ♿ Accessibility | Improve keyboard navigation and screen reader support | Medium |
-| 🧪 Testing | Add unit and integration tests | Medium |
-| 📱 Mobile UX | Improve mobile experience | Medium |
-| ⚡ Performance | Optimize bundle size and load times | Hard |
+|  New Visualizers | Add visualizations for more algorithms | Medium |
+|  Translations | Add support for new languages | Easy |
+|  Content | Add explanations for new DSA topics | Easy |
+|  Accessibility | Improve keyboard navigation and screen reader suport | Medium |
+|  Testing | Add unit and integration tests | Medium |
+|  Mobile UX | Improve mobile experience | Medium |
+|  Performance | Optimize bundle size and load times | Hard |
 
 ---
 
 ## 🗺️ Roadmap
 
-- [ ] 🎬 Animated algorithm visualizations
-- [ ] 📝 Interactive coding challenges
-- [ ] 🏆 Progress tracking and achievements
-- [ ] 👥 User accounts and saved progress
-- [ ] 📊 More complexity comparisons
-- [ ] 🌍 More language support
-- [ ] 📱 Mobile app (React Native)
+- [ ]  Animated algorithm visualizations
+- [ ]  Interactive coding challenges
+- [ ]  Progress tracking and achievements
+- [ ]  User accounts and saved progress
+- [ ]  More complexity comparisons
+- [ ]  More language support
+- [ ]  Mobile app (React Native)
 
 ---
 
@@ -296,14 +298,11 @@ Then open a Pull Request on GitHub with:
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 You are free to:
-- ✅ Use commercially
 - ✅ Modify
 - ✅ Distribute
-- ✅ Use privately
-
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - [Radix UI](https://www.radix-ui.com/) for accessible components
 - [Tailwind CSS](https://tailwindcss.com/) for styling utilities

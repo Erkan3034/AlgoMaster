@@ -4,13 +4,6 @@ import type { Database } from "@/types/database";
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 
-// Debug: Log configuration status
-console.log("🔧 Supabase Config Check:", {
-  hasUrl: !!supabaseUrl,
-  hasKey: !!supabaseAnonKey,
-  url: supabaseUrl ? supabaseUrl.substring(0, 30) + "..." : "NOT SET",
-});
-
 // Check if Supabase is configured
 export const isSupabaseConfigured = !!(supabaseUrl && supabaseAnonKey);
 
@@ -57,5 +50,15 @@ export async function getUser() {
   
   const { data: { user } } = await supabase.auth.getUser();
   return user;
+}
+
+export async function resetPassword(email: string) {
+  if (!supabase) throw new Error("Supabase not configured");
+  
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${window.location.origin}/reber/reset-password`,
+  });
+  
+  if (error) throw error;
 }
 

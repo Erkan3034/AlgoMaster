@@ -20,7 +20,7 @@ export default function AdminLogin() {
 
   useEffect(() => {
     if (!isLoading && user) {
-      setLocation("/admin");
+      setLocation("/reber");
     }
   }, [isLoading, user, setLocation]);
 
@@ -35,16 +35,16 @@ export default function AdminLogin() {
                 <Info className="h-8 w-8 text-yellow-500" />
               </div>
             </div>
-            <CardTitle className="text-2xl font-bold">Setup Required</CardTitle>
+            <CardTitle className="text-2xl font-bold">{t("reber.setup.title")}</CardTitle>
             <CardDescription>
-              Admin panel requires Supabase configuration
+              {t("reber.setup.description")}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <Alert>
               <Info className="h-4 w-4" />
               <AlertDescription>
-                To enable the admin panel, please configure Supabase environment variables:
+                {t("reber.setup.message")}
                 <br /><br />
                 <code className="text-xs bg-muted p-1 rounded">VITE_SUPABASE_URL</code>
                 <br />
@@ -56,7 +56,7 @@ export default function AdminLogin() {
               className="w-full"
               onClick={() => setLocation("/")}
             >
-              Go to Homepage
+              {t("reber.setup.goHomepage")}
             </Button>
           </CardContent>
         </Card>
@@ -82,9 +82,9 @@ export default function AdminLogin() {
 
     try {
       await login({ email, password });
-      setLocation("/admin");
+      setLocation("/reber");
     } catch (err: any) {
-      setError(err?.message || "Login failed. Please check your credentials.");
+      setError(err?.message || t("common.loginFailed"));
     }
   };
 
@@ -97,9 +97,9 @@ export default function AdminLogin() {
               <Lock className="h-8 w-8 text-primary" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold">{t("admin.login.title")}</CardTitle>
+          <CardTitle className="text-2xl font-bold">{t("reber.login.title")}</CardTitle>
           <CardDescription>
-            {t("admin.login.description")}
+            {t("reber.login.description")}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -112,13 +112,13 @@ export default function AdminLogin() {
             )}
             
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t("common.emailLabel")}</Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="email"
                   type="email"
-                  placeholder="admin@example.com"
+                  placeholder={t("reber.password.enterEmail")}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="pl-10"
@@ -129,13 +129,13 @@ export default function AdminLogin() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password">{t("admin.login.password")}</Label>
+              <Label htmlFor="password">{t("reber.login.password")}</Label>
               <div className="relative">
                 <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Enter password"
+                  placeholder={t("reber.password.enterPassword")}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="pl-10"
@@ -149,12 +149,22 @@ export default function AdminLogin() {
               {isLoginPending ? (
                 <>
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                  {t("admin.login.signing")}
+                  {t("reber.login.signing")}
                 </>
               ) : (
-                t("admin.login.submit")
+                t("reber.login.submit")
               )}
             </Button>
+            
+            <div className="text-center text-sm">
+              <button
+                type="button"
+                onClick={() => setLocation("/reber/forgot-password")}
+                className="text-primary hover:underline"
+              >
+                {t("reber.password.forgot")}
+              </button>
+            </div>
           </form>
         </CardContent>
       </Card>

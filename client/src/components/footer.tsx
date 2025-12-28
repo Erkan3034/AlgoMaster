@@ -54,7 +54,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/glossary#faq" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="footer-link-faq">
-                  FAQ
+                  {t("common.faq")}
                 </Link>
               </li>
               <li>
@@ -66,7 +66,7 @@ export function Footer() {
                   data-testid="footer-link-github"
                 >
                   <Github className="h-4 w-4" />
-                  GitHub
+                  {t("common.github")}
                 </a>
               </li>
             </ul>
@@ -78,7 +78,7 @@ export function Footer() {
             2025 {t("footer.copyright")}
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" /> for developers
+            {t("common.madeWith")} <Heart className="h-4 w-4 text-red-500 fill-red-500" /> {t("common.forDevelopers")}
           </p>
         </div>
       </div>
